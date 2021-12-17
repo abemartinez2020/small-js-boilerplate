@@ -21,11 +21,16 @@ module.exports = {
   },
   module: {
     //we create the rules/requirements/conditional logic that files have to pass for them to get the chance to be processed by the module in question, in this case babel. You'd setup rules specific to other modules such as SASS.
-    rules: {
-      test: /\.js/,
-      exclude: /node_modules/,
-      //if a file is a js file and is not in the node_modules folder, then it can access babel loader.
-      use: ["babel-loader"],
-    },
+    rules: [
+      {
+        test: /\.js/,
+        exclude: /node_modules/,
+        //if a file is a js file and is not in the node_modules folder, then it can access babel loader.
+        use: ["babel-loader"],
+      },
+    ],
   },
+  devtool: "source-map",
 };
+
+//we did not include a mode object in this configuration file because we are using webpack cli to run --mode development or --mode production inside our package.json scripts
