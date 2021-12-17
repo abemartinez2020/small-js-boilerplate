@@ -1,0 +1,5 @@
+//babel's configuraton file
+{
+  // we tell babel what preset/librery to use:
+  "presets": ["babel/preset-env"]
+}
